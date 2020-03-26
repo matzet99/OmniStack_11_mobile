@@ -27,6 +27,10 @@ export default function Detail(){
         })
     }
 
+    function sendDoar(){
+        navigation.navigate('Doar', { incident });
+    }
+
     function sendWhatsapp(){
         Linking.openURL(`whatsapp://send?phone=${incident.whatsapp}&text=${message}`)
     }
@@ -64,6 +68,11 @@ export default function Detail(){
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.action} onPress={sendMail}>
                     <Text style={styles.actionText}>E-mail</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.actions}>
+                    <TouchableOpacity style={styles.action} onPress={()=> sendDoar(incident) }>
+                    <Text style={styles.actionText}>Doar</Text>
                     </TouchableOpacity>
                 </View>
             </View>
